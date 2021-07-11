@@ -357,7 +357,7 @@ class MyClient(discord.Client):
         print('Message from {0.author}: {0.content}'.format(message))
 
         if message.content == '!checkEmail':
-            await sendGmailAsDiscord(videoLabelId, self, gmailService, loadedConfig, videoLabelSendingChannel)
+            # await sendGmailAsDiscord(videoLabelId, self, gmailService, loadedConfig, videoLabelSendingChannel)
             await sendGmailSubjectAsDiscord(choreLabelId, self, gmailService, loadedConfig, choreLabelSendingChannel)
             print('Check Email Manually triggered')
 
