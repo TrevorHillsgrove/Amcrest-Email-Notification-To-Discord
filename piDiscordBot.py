@@ -185,6 +185,8 @@ async def sendSubjectLineFromEmail(emailData, discordClient, loadedConfig, chann
       Void, uploads text from subject line of an email to Discord
     """
 
+    print(emailData)
+
     for part in emailData['payload']['parts']:
 
         print(part)
