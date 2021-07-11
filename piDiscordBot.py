@@ -186,6 +186,11 @@ async def sendSubjectLineFromEmail(emailData, discordClient, loadedConfig, chann
     """
 
     for part in emailData['payload']['parts']:
+
+        print(part)
+
+        print(part['headers'])
+
         if part['mimeType'] == 'text/plain':
             base64text = part['body']['data']
             # https://gist.github.com/perrygeo/ee7c65bb1541ff6ac770
@@ -297,9 +302,6 @@ async def sendGmailSubjectAsDiscord(labelId, discordClient, gmailService, loaded
     emails = getUnreadEmails(labelId, gmailService)
 
     for email in emails:
-
-        print(email)
-
         try:
             emailData = gmailService.users().messages().get(userId='me', id=email['id']).execute()
 
